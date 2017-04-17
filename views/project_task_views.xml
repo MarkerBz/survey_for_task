@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <record id="survey_for_task_project_task_form" model="ir.ui.view">
+        <field name="name">survey_for_task.project_task.form</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+            <div class="oe_button_box" position="inside">
+                <button name="act_task_completed_surveys" type="object"
+                    class="oe_stat_button" icon="fa-pencil-square-o">
+                    <field string="Ответы" name="tot_completed_surveys"
+                        widget="statinfo"/>
+                </button>
+            </div>
+            <field name="company_id" position="after">
+                <field name="survey_id" invisible="1"/>
+            </field>
+        </field>
+    </record>
+    
+</odoo>

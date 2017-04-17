@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <record id="survey_for_task_product_template_form" model="ir.ui.view">
+        <field name="name">survey_for_task.product_template.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <field name="project_id" position="after">
+                <field name="survey_id" attrs="{'invisible':['|', ('type','!=','service'), ('track_service', '&lt;&gt;', 'task')]}"/>
+                <field name="survey_email_template_id" attrs="{'invisible':['|', ('type','!=','service'), ('track_service', '&lt;&gt;', 'task')]}"/>
+            </field>
+        </field>
+    </record>
+    
+</odoo>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <record id="survey_for_task_sale_order_form" model="ir.ui.view">
+        <field name="name">survey_for_task.sale_order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_view_task']" position="after">
+                <button name="act_task_completed_surveys" type="object"
+                    class="oe_stat_button" icon="fa-pencil-square-o">
+                    <field string="Ответы" name="tot_completed_surveys"
+                        widget="statinfo"/>
+                </button>
+            </xpath>
+       </field>
+    </record>
+    
+</odoo>
